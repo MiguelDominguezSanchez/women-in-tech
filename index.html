@@ -21,6 +21,9 @@
         border-radius: 50px;
         width: 100px;
       }
+      img.disabled {
+          opacity: .3;
+      }
     </style>
 
     <script>
@@ -38,6 +41,13 @@
 
       $app.innerHTML += Avatar({ id: 1, name: "Andrea" });
       $app.innerHTML += Avatar({ id: 2, name: "Manuela" });
+
+
+      $app.querySelectorAll('img').forEach(img => {
+          img.addEventListener('click', () => {
+              img.classList.toggle('disabled')
+          })
+      })
     </script>
   </body>
 </html>
